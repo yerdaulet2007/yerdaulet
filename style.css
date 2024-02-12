@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+body {
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2acac;
+    font-family: 'Mochiy Pop P One', sans-serif;
+  }
+  input#open {
+    display: none;
+  }
+  
+  .valentines-day-card {
+    position: relative;
+    left: 0px;
+    width: 300px;
+    height:300px;
+    transform-style: preserve-3d;
+      transform: perspective(2500px);
+    transition: .3s;
+  }
+  
+  .card-front {
+    position: relative;
+    background-color: #fff0f3;
+    width: 300px;
+    height:300px;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 30px 0 50px rgba(0,0,0,0.3);
+    transition: .3s;
+  }
+  
+  .card-front:before {
+    content:"";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background-color: #d04e4e;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .card-inside {
+    position: absolute;
+    background-color: #fff0f3;
+    width: 300px;
+    height:300px;
+    z-index:-1;
+    left:0;
+    top:0;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.22), 100px 20px 100px rgba(0,0,0,0.1);
+  }
+  
+  .open {
+    position: absolute;
+    width: 300px;
+    height:300px;
+    left:0;
+    top:0;
+    background-color: transparent;
+    z-index:6;
+    cursor: pointer;
+  }
+  
+  #open:checked ~ .card-front {
+    transform: rotateY(-155deg);
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+  }
+  
+  #open:checked ~ .card-front:before {
+    z-index:5;
+    width:300px;
+    height:300px;
+    top:0;
+    left:0;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.1), 30px 0 50px rgba(0,0,0,0.1);
+  }
+  .note {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background-color: #fff0f3;
+    top:75px;
+    left:50px;
+    color: #333;
+    font-size:30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    -webkit-filter: drop-shadow(0 0 20px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 0 20px rgba(0,0,0,0.3));
+  }
+  
+  .note:before, .note:after {
+    position: absolute;
+    content:"";
+    background-color: #ba1c1c;
+    width: 40px;
+    height:40px;
+  }
+  
+  .note:before {
+    transform: rotate(-45deg);
+    top:-20px;
+    left:80px;
+  }
+  
+  .note:after {
+    border-radius:50%;
+    top:-35px;
+    left:65px;
+    box-shadow:30px 0 #ba1c1c;
+  }
+  .text-one {
+    position: absolute;
+    color: #333;
+    font-size: 30px;
+    top:30px;
+    width:300px;
+    text-align: center;
+  }
+  
+  .text-one:before, .text-one:after {
+    position: absolute;
+    left:5px;
+    text-align: center;
+    width:300px;
+  }
+  
+  .text-one:before {
+    content:"Valentine's";
+    top:30px;
+    color: #d04e4e;
+  }
+  
+  .text-one:after {
+    content:"day!";
+    top:60px;
+  }
+  
+  .heart {
+    position: relative;
+    background-color: #d04e4e;
+    height: 60px;
+    width:60px;
+    top:180px;
+    left:120px;
+    transform: rotate(-45deg);
+    -webkit-animation: .8s beat infinite;
+            animation: .8s beat infinite;
+  }
+    
+  .heart:before, .heart:after {
+    content:"";
+    background-color: #d04e4e;
+    border-radius:50%;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    }
+    
+  .heart:before {
+    top:-30px;
+    left:0;
+  }
+    
+  .heart:after {
+    left:30px;
+    top:0;
+  }
+  
+  .smile {
+    position: absolute;
+    width:30px;
+    height:15px;
+    background-color: #333;
+    z-index:1;
+    border-radius: 0 0 100px 100px;
+    top:200px;
+    left:135px;
+    overflow: hidden;
+  }
+  
+  .smile:before {
+    content:"";
+    position: absolute;
+    border-radius:50%;
+    width:20px;
+    height:20px;
+    background-color: #030202;
+    top:5px;
+    left:5px;
+  }
+  
+  .eyes {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #333;
+    width:10px;
+    height:10px;
+    z-index:1;
+    top:190px;
+    left:165px;
+    box-shadow: -40px 0 #333;
+    transform-origin: 50%;
+    -webkit-animation: close 2s infinite;
+            animation: close 2s infinite;
+  }
+  
+  @-webkit-keyframes close {
+      0%, 100% {
+          transform: scale(1, .05);
+      }
+      5%, 95% {
+          transform: scale(1, 1);
+      }
+  }
+  
+  @keyframes close {
+      0%, 100% {
+          transform: scale(1, .05);
+      }
+      5%, 95% {
+          transform: scale(1, 1);
+      }
+  }
+
+.gallery {
+    position: fixed;
+    top: 30px;
+    right: 40%;
+    --s: 100px; /* the size */
+    
+    display: grid;
+    transform-style: preserve-3d;
+    --_p: perspective(calc(2.5*var(--s)));
+    animation: r 9s infinite cubic-bezier(.5,-0.5,.5,1.5);
+  }
+  .gallery img {
+    grid-area: 1/1;
+    width: var(--s);
+    aspect-ratio: 1;
+    object-fit: cover;
+    transform: var(--_t,) translateZ(calc(var(--s)/2));
+  }
+  .gallery img:nth-child(2) {--_t: rotateX(-90deg)}
+  .gallery img:nth-child(3) {--_t: rotateY( 90deg)}
+  .gallery img:nth-child(4) {--_t: rotateX(180deg) rotate( 90deg)}
+  .gallery img:nth-child(5) {--_t: rotateX( 90deg)}
+  .gallery img:nth-child(6) {--_t: rotateY(-90deg)}
+  
+  @keyframes r {
+    0%,3%   {transform: var(--_p) rotate3d(0, 0, 0, 0deg)}
+    14%,19% {transform: var(--_p) rotate3d(-1, 1, 0, 180deg)}
+    31%,36% {transform: var(--_p) rotate3d(0, -1, 0, 90deg)}
+    47%,52% {transform: var(--_p) rotate3d(1, 0, 0, 90deg)}
+    64%,69% {transform: var(--_p) rotate3d(1, 0, 0, -90deg)}
+    81%,86% {transform: var(--_p) rotate3d(0, 1, 0, 90deg)}
+    97%,100%{transform: var(--_p) rotate3d(0, 0, 0, 0deg)}
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    background: #556270;
+    animation: b 9s infinite;
+  }
+  
+  @keyframes b {
+    0%,3%   {background: #774F38}
+    14%,19% {background: #C5E0DC}
+    31%,36% {background: #036564}
+    45%,55% {background: #B38184}
+    64%,69% {background: #424254}
+    81%,86% {background: #4DBCE9}
+    97%,to  {background: #774F38}
+  }
+
+  
